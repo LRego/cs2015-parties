@@ -1,0 +1,28 @@
+<form method="post" action="/create">
+
+<%= @party.errors.full_messages %>
+
+<h3>Create a new party</h3>
+
+  <div>
+    Name: <input type="text" name="name" value="<%= @party.name %>">
+  </div>
+
+  <div>
+    Address<input type="text" name="address" value="<%= @party.address %>">
+  </div>
+
+  <div>
+    Longitude<input type="text" name="longitude">
+  </div>
+
+  <div>
+    Latitude<input type="text" name="latitude">
+  </div>
+
+  <div>
+    Time<input type="datetime-local" name="time">
+  </div>
+
+  <input type="submit" value="Submit">
+</form>

@@ -8,6 +8,11 @@ get '/parties' do
 	erb :index
 end
 
+# form to create a new party
+get '/new' do
+  erb :new
+end
+
 # show individual post
 get '/parties/:id' do
 	@party = Party.find(params[:id])
@@ -20,11 +25,6 @@ get '/parties/:id/edit' do
         party.id == params[:id].to_i
     end
     erb :edit
-end
-
-# form to create a new party
-get '/parties/new' do
-
 end
 
 # method to save a new party, the /new route should point here
