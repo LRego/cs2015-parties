@@ -3,7 +3,8 @@
 
 	<ul>
 	<% @parties.each do |party| %>
-		<li><a href="/<%= party.id %>"><%= party.name %></a></li>
+		<li><a href="/<%=party.id%>"><%= party.name %></a></li>
+		<a href="/parties/<%= party.id %>/remove"><button>Remove</button></a>
 	<% end %>
 	</ul>
 </div>
