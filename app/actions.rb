@@ -28,7 +28,7 @@ get '/parties/:id/edit' do
 end
 
 # method to save a new party, the /new route should point here
-post '/parties' do
+post '/parties/create' do
     party = Party.new name: params[:name], address: params[:address], longitude: params[:longitude], latitude: params[:latitude], time: params[:time]
     party.save
     redirect "/"
