@@ -46,12 +46,24 @@ get '/parties/:id/remove' do
 	redirect '/'
 end
 
+
 get '/attendee/:id/remove' do
     Attendee.destroy(params[:id])
     redirect '/'
 end
 
+
 get '/parties/:id/attendee' do
 	@party_id = params[:id]
 	erb :new_attendee
 end
+
+post '/parties/create/:party_id/attendee' do
+    Attendee.create({
+        name: params[:name], 
+        email: params[:email],
+        party_id: params[:party_id]
+        })
+    redirect '/'
+end
+
