@@ -1,37 +1,30 @@
 <form method="post" action="/parties/<%= @party.id %>/update">
-
-<div class="container">
-    <div class="row">
-        <div class="col-md-12">
-            <div class="col-md-6">
-                <div class="party">
-                    <h3>Edit Party</h3>
-
-                    <div>
-                        <label for="name">Name</label>
-                        <input type="text" name="name" value="<%= @party.name %>">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <div class="col-md-6">
+                    <div class="party">
+                        <h3>Edit Party</h3>
+                        <div>
+                            <label for="name">Name</label>
+                            <input type="text" name="name" value="<%= @party.name %>">
+                        </div>
+                        <div>
+                            <label for="address">Address</label>Address<input type="text" name="address" value="<%= @party.address %>">
+                        </div>
+                        <div>
+                            <label for="longitude">Longitude</label><input type="text" name="longitude" value="<%= @party.longitude %>">
+                        </div>
+                        <div>
+                            <label for="latitude">Latitude</label><input type="text" name="latitude" value="<%= @party.latitude %>">
+                        </div>
+                        <div>
+                            <label for="time">Time</label><input type="datime-local" name="time" value="<%= @party.time.strftime("%Y/%m/%d %H:%M:%S") %>">
+                        </div>
+                        <input type="submit" value="Submit">
                     </div>
-
-                    <div>
-                        <label for="address">Address</label>Address<input type="text" name="address" value="<%= @party.address %>">
-                    </div>
-
-                    <div>
-                        <label for="longitude">Longitude</label><input type="text" name="longitude" value="<%= @party.longitude %>">
-                    </div>
-
-                    <div>
-                        <label for="latitude">Latitude</label><input type="text" name="latitude" value="<%= @party.latitude %>">
-                    </div>
-
-                    <div>
-                        <label for="time">Time</label><input type="datetime-local" name="time" value="<%= @party.time %>">
-                    </div>
-                    <input type="submit" value="Submit">
                 </div>
             </div>
         </div>
     </div>
-</div>
-
 </form>
