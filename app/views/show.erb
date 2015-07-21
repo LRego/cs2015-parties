@@ -4,3 +4,11 @@
 	<p> Coordinates: <%= @party.longitude %>º E ; <%= @party.latitude %>º N </p>
 	<p> <%= @party.time.strftime("Date: %m/%d/%Y at %I:%M%p") %> </p>
 </div>
+
+<div class="button-sign_up">
+	<a href="/parties/<%= @party.id %>/attendee">
+		<button>Sign Up</button>
+	</a>
+</div>
+
+

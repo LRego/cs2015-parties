@@ -45,3 +45,7 @@ get '/parties/:id/remove' do
 	Party.destroy(params[:id])
 	redirect '/'
 end
+
+get '/parties/:id/attendee' do
+	erb :new_attendee
+end
