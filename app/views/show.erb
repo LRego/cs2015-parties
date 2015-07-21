@@ -3,5 +3,5 @@
 	<p> <%= @party.address %> </p>
 	<p> <%= @party.longitude %> </p>
 	<p> <%= @party.latitude %> </p>
-	<p> <%= @party.time %> </p>
+	<p> <%= @party.time.strftime("Date: %m/%d/%Y at %I:%M%p") %> </p>
 </div>
