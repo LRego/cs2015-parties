@@ -47,5 +47,8 @@ get '/parties/:id/remove' do
 end
 
 get '/parties/:id/attendee' do
+	@party_id = params[:id]
+	puts "----------------------------------------------"
+	puts @party_id
 	erb :new_attendee
 end
