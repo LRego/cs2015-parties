@@ -9,7 +9,7 @@ get '/parties' do
 end
 
 # form to create a new party
-get '/new' do
+get '/parties/new' do
   erb :new
 end
 
