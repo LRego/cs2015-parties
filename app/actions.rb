@@ -45,3 +45,8 @@ get '/parties/:id/remove' do
 	Party.destroy(params[:id])
 	redirect '/'
 end
+
+get '/attendee/:id/remove' do
+    Attendee.destroy(params[:id])
+    redirect '/'
+end
