@@ -1,17 +1,21 @@
-# list of all parties
 get '/' do
+    redirect '/parties'
+end
+
+# list of all parties
+get '/parties' do
 	@parties = Party.all
 	erb :index
 end
 
 # show individual post
-get '/:id' do
+get '/parties/:id' do
 	@party = Party.find(params[:id])
 	erb :show
 end
 
 # form to edit a single party
-get '/:id/edit' do
+get '/parties/:id/edit' do
     @party = Party.find do |party|
         party.id == params[:id].to_i
     end
@@ -19,21 +23,21 @@ get '/:id/edit' do
 end
 
 # form to create a new party
-get '/new' do
+get '/parties/new' do
 end
 
 # method to save a new party, the /new route should point here
- post '/create' do
+ post '/parties' do
   party = Party.new name: params[:name], address: params[:address], longitude: params[:longitude], latitude: params[:latitude], time: params[:time]
   party.save
   redirect "/"
  end
 
 # method to update an existing party, the /:id/edit should point here
-post '/:id/update' do
+post '/parties/:id/update' do
 end
 
-get '/remove/:id' do
+get '/parties/:id/remove' do
 	Party.destroy(params[:id])
 	redirect '/'
 end
