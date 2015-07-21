@@ -11,7 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150721093753) do
+ActiveRecord::Schema.define(version: 20150721153045) do
+
+  create_table "attendees", force: :cascade do |t|
+    t.string  "name"
+    t.string  "email"
+    t.integer "party_id"
+  end
 
   create_table "parties", force: :cascade do |t|
     t.string   "name"
