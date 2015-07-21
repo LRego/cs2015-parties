@@ -35,7 +35,10 @@ post '/parties' do
 end
 
 # method to update an existing party, the /:id/edit should point here
+
 post '/parties/:id/update' do
+    Party.update(params[:id], name: params[:name], address: params[:address], longitude: params[:longitude], latitude: params[:latitude], time: params[:time])
+    redirect "/parties"
 end
 
 get '/parties/:id/remove' do
