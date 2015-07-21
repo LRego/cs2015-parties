@@ -21,3 +21,8 @@ end
 # method to update an existing party, the /:id/edit should point here
 post '/:id/update' do
 end
+
+get '/remove/:id' do
+	Party.destroy(params[:id])
+	redirect '/'
+end
