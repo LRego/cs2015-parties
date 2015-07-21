@@ -12,6 +12,10 @@ end
 
 # form to edit a single party
 get '/:id/edit' do
+    @party = Party.find do |party|
+        party.id == params[:id].to_i
+    end
+    erb :edit
 end
 
 # form to create a new party
