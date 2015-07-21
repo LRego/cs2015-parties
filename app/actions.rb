@@ -24,14 +24,15 @@ end
 
 # form to create a new party
 get '/parties/new' do
+
 end
 
 # method to save a new party, the /new route should point here
- post '/parties' do
-  party = Party.new name: params[:name], address: params[:address], longitude: params[:longitude], latitude: params[:latitude], time: params[:time]
-  party.save
-  redirect "/"
- end
+post '/parties' do
+    party = Party.new name: params[:name], address: params[:address], longitude: params[:longitude], latitude: params[:latitude], time: params[:time]
+    party.save
+    redirect "/"
+end
 
 # method to update an existing party, the /:id/edit should point here
 post '/parties/:id/update' do
