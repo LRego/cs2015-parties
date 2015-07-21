@@ -64,3 +64,4 @@ post '/parties/create/:party_id/attendee' do
         })
     redirect '/'
 end
+
