@@ -1,15 +1,13 @@
-<form method="post" action="/create">
-
-<%= @party.errors.full_messages %>
+<form method="post" action="/parties/create">
 
 <h3>Create a new party</h3>
 
   <div>
-    Name: <input type="text" name="name" value="<%= @party.name %>">
+    Name: <input type="text" name="name">
   </div>
 
   <div>
-    Address<input type="text" name="address" value="<%= @party.address %>">
+    Address<input type="text" name="address">
   </div>
 
   <div>
