@@ -1,9 +1,13 @@
 # list of all parties
 get '/' do
+	@parties = Party.all
+	erb :index
 end
 
 # show individual post
 get '/:id' do
+	@party = Party.find(params[:id])
+	erb :show
 end
 
 # form to edit a single party
