@@ -1,7 +1,7 @@
 <div class="container">
     <div class="row">
         <div class="col-md-12">
-            <div class="col-md-6">
+            <div class="col-md-6 col-md-offset-3">
                 <div class="create-party">
                     <form method="post" action="/parties/<%= @party.id %>/update">
                         <h3>Edit Party</h3>
@@ -17,13 +17,19 @@
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="longitude">Longitude</label>
-                                    <input type="text" class="form-control" value="<%= @party.longitude %>" id="longitude">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                                        <input type="text" class="form-control" value="<%= @party.longitude %>" id="longitude">
+                                    </div>
                                 </div>
                             </div>
                             <div class="col-md-6">
                                 <div class="form-group">
                                     <label for="latitude">Latitude</label>
-                                    <input type="text" class="form-control" value="<%= @party.latitude %>" id="latitude">
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                                        <input type="text" class="form-control" value="<%= @party.latitude %>" id="latitude">
+                                    </div>
                                 </div>
                             </div>
                         </div>
