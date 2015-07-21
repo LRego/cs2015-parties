@@ -1,8 +1,9 @@
-<h1>List all Parties</h1>
 <div class="list-parties">
+	<h1>List all Parties</h1>
+
 	<ul>
 	<% @parties.each do |party| %>
-		<li><%= party.name %></li>
+		<li><a href="/<%=party.id%>"><%= party.name %></a></li>
 	<% end %>
 	</ul>
 </div>
