@@ -26,6 +26,7 @@ get '/parties/:id/edit' do
     end
     erb :edit
 end
+
 # method to save a new party, the /new route should point here
 post '/parties' do
     party = Party.new name: params[:name], address: params[:address], longitude: params[:longitude], latitude: params[:latitude], time: params[:time]
