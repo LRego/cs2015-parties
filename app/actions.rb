@@ -85,6 +85,7 @@ post '/parties/:party_id/attendee/export' do
             file.write("#{attendee.name}\n")
         end
     end
+    redirect "/parties/#{params[:party_id]}"
 end
 
 

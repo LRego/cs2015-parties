@@ -80,3 +80,8 @@
   Select a file: <input type="file" name="csv">
   <input type="submit">
 </form>
+
+<%= error_message_on "post", "title",
+      :prepend_text => "Title simply ",
+      :append_text => " (or it won't work).",
+      :css_class => "inputError" %>
