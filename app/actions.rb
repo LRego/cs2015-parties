@@ -4,7 +4,14 @@ end
 
 # list of all parties
 get '/parties' do
-	@parties = Party.all
+    if params.key?('name') && params[:name].length >= 3
+        @parties = Party.select do |party|
+            party.name.downcase.include?(params[:name].downcase)
+        end
+    else
+        @parties = Party.all
+    end
+	
 	erb :index
 end
 
