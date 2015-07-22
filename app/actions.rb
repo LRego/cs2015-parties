@@ -85,6 +85,8 @@ post '/parties/:party_id/attendee/export' do
         party.attendees.each do |attendee|
             file.write("#{attendee.name}\n")
         end
+    end
+end
 
 
 post '/parties/:party_id/attendee/import_csv' do
