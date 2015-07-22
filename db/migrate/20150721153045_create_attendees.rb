@@ -1,4 +1,4 @@
-class Attendee < ActiveRecord::Migration
+class CreateAttendees < ActiveRecord::Migration
   def change
     create_table :attendees do |attendee|
       attendee.string :name
