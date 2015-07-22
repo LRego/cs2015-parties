@@ -1,4 +1,4 @@
-button .cancel-button, .submit-button, .remove-button, .edit-button, .info-button {
+button .cancel-button, .submit-button, .remove-button, .edit-button, .info-button, .search-button {
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -21,6 +21,12 @@ button .cancel-button, .submit-button, .remove-button, .edit-button, .info-butto
     border-bottom-color: #c73232;
 }
 
+.btn.cancel-button:focus {
+    background-color: #e86161;
+    color: #fff;
+    border-color: #e86161;
+}
+
 .submit-button {
     background-color: #3498db;
     color: #fff;
@@ -33,6 +39,12 @@ button .cancel-button, .submit-button, .remove-button, .edit-button, .info-butto
     color: #fff;
     border-color: #3498db;
     border-bottom-color: #1f49a8;
+}
+
+.btn.submit-button:focus {
+    background-color: #62abdd;
+    color: #fff;
+    border-color: #3498db;
 }
 
 .remove-button {
@@ -49,6 +61,12 @@ button .cancel-button, .submit-button, .remove-button, .edit-button, .info-butto
     border-bottom-color: #B30909;
 }
 
+.btn.remove-button:focus {
+    background-color: #ff3838;
+    color: #ffffff;
+    border-color: #ff3838;
+}
+
 .edit-button {
     background-color: #3A83BD;
     color: #D1F1FF;
@@ -63,6 +81,12 @@ button .cancel-button, .submit-button, .remove-button, .edit-button, .info-butto
     border-bottom-color: #D1F1FF;
 }
 
+.btn.edit-button:focus {
+    background-color: #5390c1;
+    color: #D1F1FF;
+    border-color: #5390c1;
+}
+
 .info-button {
     background-color: #45c7e9;
     color: #ffffff;
@@ -75,4 +99,28 @@ button .cancel-button, .submit-button, .remove-button, .edit-button, .info-butto
     color: #ffffff;
     border-color: #26bde4;
     border-bottom-color: #1aa7cb;
+}
+
+.btn.info-button:focus {
+    background-color: #67CFEA;
+    color: #ffffff;
+    border-color: #26bde4;
+}
+
+.search-button {
+    background-color: #247fc2;
+    color: #ffffff;
+    border-color: #247fc2;
+}
+
+.search-button:hover {
+    background-color: #4c92c6;
+    color: #ffffff;
+    border-color: #247fc2;
+}
+
+.btn.search-button:focus {
+    background-color: #4c92c6;
+    color: #ffffff;
+    border-color: #247fc2;
 }

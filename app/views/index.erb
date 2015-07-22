@@ -4,11 +4,32 @@
 			<h1 class="text-center">Crazy Parties!!</h1>
 		</div>
 		<div class="row">
+			<div class="col-md-12">
+				<form method="get" action="/parties">
+					<div class="row">
+						<div class="col-md-6">
+							<div class="input-group">
+								<span class="input-group-addon"><i class="glyphicon glyphicon-search"></i></span>
+								<input type="text" class="form-control" name="name" placeholder="@search a party" id="search">
+								<span class="input-group-btn">
+		        					<button class="btn btn-default search-button" type="submit">Search</button>
+								</span>
+							</div>
+						</div>
+						<div class="columns columns-right btn-group">
+							<button class="btn btn-default" type="button" name="refresh" title="Refresh"><i class="glyphicon glyphicon-refresh icon-refresh"></i></button>
+							<button class="btn btn-default" type="button" name="toggle" title="Toggle"><i class="glyphicon glyphicon glyphicon-list-alt icon-list-alt"></i></button>
+						</div>
+					</div>
+				</form>
+			</div>
+		</div>
+		<div class="row">
 			<div class="col-md-8">
 				<div class="list-parties">
 					<table class="table table-hover">
 						<thead>
-							<th>Party Number</th>
+							<th>Party Date</th>
 							<th>Party Name</th>
 							<th>Party Address</th>
 							<th>Actions</th>
@@ -16,11 +37,11 @@
 						<tbody>
 							<% @parties.each do |party| %>
 								<tr>
-									<th scope="row"><%= party.id %></th>
+									<th scope="row"><%= party.time %></th>
 									<td><%= party.name %></td>
 									<td><%= party.address %></td>
 									<td>
-										<a class="btn btn-primary btn-sm info-button" href="/parties/<%=party.id%>"><i class="glyphicon glyphicon-info-sign"></i></a>
+										<a class="btn btn-primary btn-sm info-button" title="See details" href="/parties/<%=party.id%>"><i class="glyphicon glyphicon-info-sign"></i></a>
 										<a class="btn btn-primary btn-sm edit-button" href="/parties/<%= party.id %>/edit"><i class="glyphicon glyphicon-edit"></i></a>
 										<a class="btn btn-primary btn-sm remove-button" href="/parties/<%= party.id %>/remove"><i class="glyphicon glyphicon-remove"></i></a>
 									</td>
@@ -37,12 +58,5 @@
 	</div>
 </div>
 
- <form method="GET" action="/parties">
- 	<p>Search</p>
- 	<input name="name" type="text" placeholder="search">
- 	<input type="submit">
- </form>
-
- <a href="/parties/new">Create new party</a>
  <p><a href="/parties?sort=desc">Descending</a></p>
   <p><a href="/parties?sort=asc">Ascending</a></p>
