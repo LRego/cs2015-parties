@@ -1,26 +1,58 @@
-<form method="post" action="/parties/create">
-
-<h3>Create a new party</h3>
-
-  <div>
-    Name: <input type="text" name="name">
-  </div>
-
-  <div>
-    Address<input type="text" name="address">
-  </div>
-
-  <div>
-    Longitude<input type="text" name="longitude">
-  </div>
-
-  <div>
-    Latitude<input type="text" name="latitude">
-  </div>
-
-  <div>
-    Time<input type="datetime-local" name="time">
-  </div>
-
-  <input type="submit" value="Submit">
-</form>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="create-party">
+                    <form method="post" action="/parties/create">
+                        <h3>New Party</h3>
+                        <div class="form-group">
+                            <label class="control-label" for="name">Name</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-music"></i></span>
+                                <input type="text" class="form-control" name="name" id="name" placeholder="Insert party name">
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="address">Address</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+                                <input type="text" class="form-control" name="address" id="address" placeholder="Type party address">
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="longitude">Longitude</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                                        <input type="text" class="form-control" name="longitude" id="longitude" placeholder="Longitude coordinates">
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div class="form-group">
+                                    <label for="latitude">Latitude</label>
+                                    <div class="input-group">
+                                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+                                        <input type="text" class="form-control" name="latitude" id="latitude" placeholder="Latitude coordinates">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="form-group">
+                            <label for="time">Time</label>
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                <input type="datetime-local" class="form-control" name="time" id="time">
+                            </div>
+                        </div>
+                        <hr>
+                        <div class="button-actions">
+                            <button type="submit" class="btn btn-primary submit-button">Create Party</button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

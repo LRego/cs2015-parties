@@ -4,27 +4,6 @@
 	<input type="submit">
 </form>
 
-
-
-<div class="list-parties">
-	<h1>List all Parties</h1>
-
-	<ul>
-	<% @parties.each do |party| %>
-		<li>
-			<a href="/parties/<%=party.id%>"><%= party.name %></a>
-			<a href="/parties/<%= party.id %>/edit">
-				<button>Edit</button>
-			</a>
-			<a href="/parties/<%= party.id %>/remove">
-				<button>Remove</button>
-			</a>
-		</li>
-		
-	<% end %>
-	</ul>
-</div>
-
 <a href="/parties/new">Create new party</a>
 <p><a href="/parties?sort=desc">Descending</a></p>
  <p><a href="/parties?sort=asc">Ascending</a></p>
