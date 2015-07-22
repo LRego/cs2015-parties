@@ -23,6 +23,7 @@ end
 # show individual post
 get '/parties/:id' do
 	@party = Party.find(params[:id])
+    @attendees = @party.attendees 
 	erb :show
 end
 
@@ -58,10 +59,6 @@ get '/attendee/:id/remove' do
     redirect '/'
 end
 
-get '/parties/:id/attendee' do
-	@party_id = params[:id]
-	erb :new_attendee
-end
 
 post '/parties/create/:party_id/attendee' do
     Attendee.create({
@@ -69,6 +66,6 @@ post '/parties/create/:party_id/attendee' do
         email: params[:email],
         party_id: params[:party_id]
         })
-    redirect '/'
+    redirect "/parties/#{params[:party_id]}"
 end
 
