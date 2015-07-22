@@ -1,3 +1,5 @@
+require 'csv'
+
 get '/' do
     redirect '/parties'
 end
@@ -59,8 +61,10 @@ get '/parties/:id/remove' do
 end
 
 get '/attendee/:id/remove' do
-    Attendee.destroy(params[:id])
-    redirect '/'
+    attendee = Attendee.find(params[:id])
+    party_id = attendee.party_id
+    attendee.destroy
+    redirect "/parties/#{party_id}"
 end
 
 
@@ -73,6 +77,32 @@ post '/parties/create/:party_id/attendee' do
     redirect "/parties/#{params[:party_id]}"
 end
 
+<<<<<<< HEAD
+=======
+
+post '/parties/:party_id/attendee/export' do
+    party = Party.find(params[:party_id])
+
+    File.open("exported_files/#{party.name}.txt", 'w') do |file|
+        party.attendees.each do |attendee|
+            file.write("#{attendee.name}\n")
+        end
+
+
+post '/parties/:party_id/attendee/import_csv' do
+    @party = Party.find(params[:party_id])
+    CSV.foreach(params[:csv][:tempfile], :headers => true) do |row|
+        p row
+        Attendee.create({
+            name: row['name'], 
+            email: row['email'],
+            party_id: params[:party_id]
+            })
+
+    end
+    redirect "/parties/#{params[:party_id]}"
+end
+>>>>>>> 0065f914ce60862d9ce7807ff31cd86f13c22aca
 
 
 

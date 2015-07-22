@@ -7,8 +7,5 @@ A full featured web application to manager your parties.
 * Edit a party.
 * Create a new party.
 * Remove a party.
-
-Future Update:
-
 * Export the list of attendees as a .txt file.
 * Import attendees from a CSV file with the name and email fields.

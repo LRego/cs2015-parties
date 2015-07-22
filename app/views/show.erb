@@ -66,6 +66,7 @@
 <ul>
   <% @attendees.each do |attendee| %>
   <li>Name: <%= attendee.name %>, E-Mail: <%= attendee.email %></li>
+  <a class="btn btn-primary btn-sm remove-button" href="/attendee/<%= attendee.id %>/remove"><i class="glyphicon glyphicon-remove"></i></a>
   <% end %>
 </ul>
 
@@ -74,7 +75,8 @@
   <button>Export</button>
 </form>
 
-<form action="/parties/<%= @party.id %>/attendee/import" method="post">
-	<input name="name_file" type='text'placeholder="name or file">
-  	<button type="submit">Import</button>
+
+<form action="/parties/<%= @party.id %>/attendee/import_csv" method="post" enctype="multipart/form-data">
+  Select a file: <input type="file" name="csv">
+  <input type="submit">
 </form>
