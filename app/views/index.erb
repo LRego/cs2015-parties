@@ -1,9 +1,48 @@
-<form method="GET" action="/parties">
-	<p>Search</p>
-	<input name="name" type="text" placeholder="search">
-	<input type="submit">
-</form>
+<div class="container">
+	<div class="row">
+		<div class="col-md-12">
+			<h1 class="text-center">Crazy Parties!!</h1>
+		</div>
+		<div class="row">
+			<div class="col-md-8">
+				<div class="list-parties">
+					<table class="table table-hover">
+						<thead>
+							<th>Party Number</th>
+							<th>Party Name</th>
+							<th>Party Address</th>
+							<th>Actions</th>
+						</thead>
+						<tbody>
+							<% @parties.each do |party| %>
+								<tr>
+									<th scope="row"><%= party.id %></th>
+									<td><%= party.name %></td>
+									<td><%= party.address %></td>
+									<td>
+										<a class="btn btn-primary btn-sm info-button" href="/parties/<%=party.id%>"><i class="glyphicon glyphicon-info-sign"></i></a>
+										<a class="btn btn-primary btn-sm edit-button" href="/parties/<%= party.id %>/edit"><i class="glyphicon glyphicon-edit"></i></a>
+										<a class="btn btn-primary btn-sm remove-button" href="/parties/<%= party.id %>/remove"><i class="glyphicon glyphicon-remove"></i></a>
+									</td>
+								</tr>
+							<% end %>
+						</tbody>
+					</table>
+				</div>
+			</div>
+			<div class="col-md-4">
+				<a class="btn btn-primary submit-button" href="/parties/new">New party</a>
+			</div>
+		</div>
+	</div>
+</div>
 
-<a href="/parties/new">Create new party</a>
-<p><a href="/parties?sort=desc">Descending</a></p>
- <p><a href="/parties?sort=asc">Ascending</a></p>
+ <form method="GET" action="/parties">
+ 	<p>Search</p>
+ 	<input name="name" type="text" placeholder="search">
+ 	<input type="submit">
+ </form>
+
+ <a href="/parties/new">Create new party</a>
+ <p><a href="/parties?sort=desc">Descending</a></p>
+  <p><a href="/parties?sort=asc">Ascending</a></p>
