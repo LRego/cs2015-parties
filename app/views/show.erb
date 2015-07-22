@@ -74,6 +74,7 @@
   <button>Export</button>
 </form>
 
-<form action="" method="">
-  <button>Import</button>
+<form action="/parties/<%= @party.id %>/attendee/import" method="post">
+	<input name="name_file" type='text'placeholder="name or file">
+  	<button type="submit">Import</button>
 </form>

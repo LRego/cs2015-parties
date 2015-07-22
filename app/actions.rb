@@ -73,13 +73,6 @@ post '/parties/create/:party_id/attendee' do
     redirect "/parties/#{params[:party_id]}"
 end
 
-post '/parties/:party.id/attendee/export' do
-    
-    
-
-end
-
-
 
 
 
