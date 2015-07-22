@@ -69,3 +69,28 @@ post '/parties/create/:party_id/attendee' do
     redirect "/parties/#{params[:party_id]}"
 end
 
+get '/parties/:party.id/attendee/export' do
+    
+end
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
