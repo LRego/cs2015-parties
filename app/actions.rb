@@ -73,10 +73,15 @@ post '/parties/create/:party_id/attendee' do
     redirect "/parties/#{params[:party_id]}"
 end
 
-post '/parties/:party.id/attendee/export' do
-    
-    
+post '/parties/:party_id/attendee/export' do
+    party = Party.find(params[:party_id])
 
+    File.open("exported_files/#{party.name}.txt", 'w') do |file|
+        party.attendees.each do |attendee|
+            file.write("#{attendee.name}\n")
+        end
+    end
+    redirect "/parties/#{params[:party_id]}"
 end
 
 
