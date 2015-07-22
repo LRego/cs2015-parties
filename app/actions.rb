@@ -11,6 +11,10 @@ get '/parties' do
     else
         @parties = Party.all
     end
+
+    if params.key?('sort')
+        @parties = Party.all.order(time: params[:sort])
+    end
 	
 	erb :index
 end
