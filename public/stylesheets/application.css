@@ -1,44 +1,78 @@
+button .cancel-button, .submit-button, .remove-button, .edit-button, .info-button {
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
+.btn + .btn {
+    margin-left: 5px;
+}
+
 .cancel-button {
-    background: #fff;
+    background-color: #fff;
     color: #e86161;
     border-color: #e86161;
     border-bottom-color: #d54b4b;
 }
 
 .cancel-button:hover {
-    background: #e86161;
+    background-color: #e86161;
     color: #fff;
     border-color: #e86161;
     border-bottom-color: #c73232;
 }
 
 .submit-button {
-    background: #3498db;
+    background-color: #3498db;
     color: #fff;
     border-color: #3498db;
     border-bottom-color: #4370d5;
 }
 
 .submit-button:hover {
-    background: #62abdd;
+    background-color: #62abdd;
     color: #fff;
     border-color: #3498db;
     border-bottom-color: #1f49a8;
 }
 
 .remove-button {
-    background: #ffffff;
+    background-color: #ffffff;
     color: #ff3838;
     border-color: #ff3838;
-    border-bottom-color: #fa0e0e;
+    border-bottom-color: #D42020;
 }
 
-button {
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
+.remove-button:hover {
+    background-color: #ff3838;
+    color: #ffffff;
+    border-color: #ff3838;
+    border-bottom-color: #B30909;
 }
 
+.edit-button {
+    background-color: #3A83BD;
+    color: #D1F1FF;
+    border-color: #3A83BD;
+    border-bottom-color: #D1F1FF;
+}
 
-.btn + .btn {
-    margin-left: 5px;
+.edit-button:hover {
+    background-color: #5390c1;
+    color: #D1F1FF;
+    border-color: #5390c1;
+    border-bottom-color: #D1F1FF;
+}
+
+.info-button {
+    background-color: #45c7e9;
+    color: #ffffff;
+    border-color: #26bde4;
+    border-bottom-color: #1aa7cb;
+}
+
+.info-button:hover {
+    background-color: #67CFEA;
+    color: #ffffff;
+    border-color: #26bde4;
+    border-bottom-color: #1aa7cb;
 }

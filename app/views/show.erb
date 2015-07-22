@@ -1,18 +1,70 @@
-<div class="party">
-	<h1> Party: <%= @party.name %> </h1>
-	<p> <%= @party.address %> </p>
-	<p> Coordinates: <%= @party.longitude %>º E ; <%= @party.latitude %>º N </p>
-	<p> <%= @party.time.strftime("Date: %m/%d/%Y at %I:%M%p") %> </p>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="col-md-6 col-md-offset-3">
+                <div class="show-party">
+					<form method="post" action="/parties/<%= @party.id %>/update">
+                        <fieldset disabled>
+							<h3><%= @party.name %></h3>
+	                        <div class="form-group">
+	                            <label class="control-label" for="name">Name</label>
+	                            <div class="input-group">
+	                                <span class="input-group-addon"><i class="glyphicon glyphicon-music"></i></span>
+	                                <input type="text" class="form-control" value="<%= @party.name %>" id="name">
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <label for="address">Address</label>
+	                            <div class="input-group">
+	                                <span class="input-group-addon"><i class="glyphicon glyphicon-home"></i></span>
+	                                <input type="text" class="form-control" value="<%= @party.address %>" id="address">
+	                            </div>
+	                        </div>
+	                        <div class="row">
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="longitude">Longitude</label>
+	                                    <div class="input-group">
+	                                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+	                                        <input type="text" class="form-control" value="<%= @party.longitude %>" id="longitude">
+	                                    </div>
+	                                </div>
+	                            </div>
+	                            <div class="col-md-6">
+	                                <div class="form-group">
+	                                    <label for="latitude">Latitude</label>
+	                                    <div class="input-group">
+	                                        <span class="input-group-addon"><i class="glyphicon glyphicon-map-marker"></i></span>
+	                                        <input type="text" class="form-control" value="<%= @party.latitude %>" id="latitude">
+	                                    </div>
+	                                </div>
+	                            </div>
+	                        </div>
+	                        <div class="form-group">
+	                            <label for="time">Time</label>
+	                            <div class="input-group">
+	                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+	                                <input type="datime-local" class="form-control" value="<%#= @party.time.strftime("%Y/%m/%d %H:%M:%S") %>" id="time">
+	                            </div>
+	                        </div>
+						</fieldset>
+                    </form>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>
+
 
 <form action="/parties/create/<%= @party.id %>/attendee" method="post">
    <input type="text" name="name" placeholder="Insert your name here">
    <input type="email" name="email" placeholder="Insert your email here">
    <button type="submit" >Add new attendee</button>
-</form> 
+</form>
 
 <ul>
-  <% @attendees.each do |attendee| %> 
+  <% @attendees.each do |attendee| %>
   <li>Name: <%= attendee.name %>, E-Mail: <%= attendee.email %></li>
   <% end %>
 </ul>
