@@ -35,7 +35,10 @@
                         </div>
                         <div class="form-group">
                             <label for="time">Time</label>
-                            <input type="datime-local" class="form-control" value="<%#= @party.time.strftime("%Y/%m/%d %H:%M:%S") %>" id="time">
+                            <div class="input-group">
+                                <span class="input-group-addon"><i class="glyphicon glyphicon-time"></i></span>
+                                <input type="datime-local" class="form-control" value="<%#= @party.time.strftime("%Y/%m/%d %H:%M:%S") %>" id="time">
+                            </div>
                         </div>
                         <a href="/parties" class="btn btn-primary cancel-button">Cancelar</a>
                         <button type="submit" class="btn btn-primary submit-button">Save</button>

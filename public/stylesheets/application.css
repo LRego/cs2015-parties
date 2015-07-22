@@ -3,8 +3,6 @@
     color: #e86161;
     border-color: #e86161;
     border-bottom-color: #d54b4b;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
 }
 
 .cancel-button:hover {
@@ -19,8 +17,6 @@
     color: #fff;
     border-color: #3498db;
     border-bottom-color: #4370d5;
-    -webkit-transition: all 0.3s ease 0s;
-    transition: all 0.3s ease 0s;
 }
 
 .submit-button:hover {
@@ -29,6 +25,19 @@
     border-color: #3498db;
     border-bottom-color: #1f49a8;
 }
+
+.remove-button {
+    background: #ffffff;
+    color: #ff3838;
+    border-color: #ff3838;
+    border-bottom-color: #fa0e0e;
+}
+
+button {
+    -webkit-transition: all 0.3s ease 0s;
+    transition: all 0.3s ease 0s;
+}
+
 
 .btn + .btn {
     margin-left: 5px;
