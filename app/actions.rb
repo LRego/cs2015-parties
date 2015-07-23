@@ -82,7 +82,7 @@ post '/parties/:party_id/attendee/export' do
 
     party = Party.find(params[:party_id])
 
-    party.partytxt
+    party.export
 
     redirect "/parties/#{params[:party_id]}"
 
@@ -90,14 +90,9 @@ end
 
 
 post '/parties/:party_id/attendee/import_csv' do
-    @party = Party.find(params[:party_id])
-    CSV.foreach(params[:csv][:tempfile], :headers => true) do |row|
-        Attendee.create({
-            name: row['name'], 
-            email: row['email'],
-            party_id: params[:party_id]
-            })
+    party = Party.find(params[:party_id])
+    
+    party.import(params[:csv][:tempfile])
 
-    end
     redirect "/parties/#{params[:party_id]}"
 end
