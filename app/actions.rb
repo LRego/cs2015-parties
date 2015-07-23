@@ -92,7 +92,6 @@ end
 post '/parties/:party_id/attendee/import_csv' do
     @party = Party.find(params[:party_id])
     CSV.foreach(params[:csv][:tempfile], :headers => true) do |row|
-        p row
         Attendee.create({
             name: row['name'], 
             email: row['email'],

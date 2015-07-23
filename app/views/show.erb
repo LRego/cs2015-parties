@@ -75,7 +75,9 @@
   <button>Export</button>
 </form>
 
+
 <form action="/parties/<%= @party.id %>/attendee/import_csv" method="post" enctype="multipart/form-data">
-  Select a file: <input type="file" name="csv">
+  <input type="file" name="csv">
   <input type="submit">
 </form>
+
